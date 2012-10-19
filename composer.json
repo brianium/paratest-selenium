@@ -1,0 +1,6 @@
+{
+    "name": "brianium/paratest-selenium",
+    "require": {
+        "brianium/paratest": "dev-master"
+    }
+}
