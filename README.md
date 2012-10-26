@@ -23,8 +23,8 @@ You will need to make sure you have selenium server installed. Head over to [Sel
 
 `java -jar /path/to/selenium-server-standalone-2.25.0.jar`
 
-### Install Dependencies ###
-All the dependencies can be installed via composer.
+### Install Dependencies Via Composer ###
+All of the dependencies can be installed via composer.
 
 `php composer.phar install`
 
