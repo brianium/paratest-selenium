@@ -46,7 +46,8 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->todos->addTodos(array("one", "two"));
         foreach($this->todos->getItems() as $item)
             $this->todos->getItemCheckbox($item)->click();
-        $this->todos->getItemCheckbox(array_shift($this->todos->getItems()))->click();
+        $items = $this->todos->getItems();
+        $this->todos->getItemCheckbox(array_shift($items))->click();
         $this->assertNull($this->todos->getToggleAll()->attribute('checked'));
     }
 
@@ -82,7 +83,8 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testCheckingItemsAsDoneSetsCountToZeroAndHasPluralTerm()
     {
         $this->todos->addTodo("make sure terms updated");
-        $todo = array_shift($this->todos->getItems());
+        $items = $this->todos->getItems();
+        $todo = array_shift($items);
         $this->todos->getItemCheckbox($todo)->click();
         $this->assertEquals('0 items left', $this->todos->getTodoCount()->text());
     }
@@ -98,14 +100,16 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testDestroyOneOfTwoUpdatesCountText()
     {
         $this->todos->addTodos(array('one', 'two'));
-        $this->todos->getItemDestroy(0, array_shift($this->todos->getItems()))->click();
+        $items = $this->todos->getItems();
+        $this->todos->getItemDestroy(0, array_shift($items))->click();
         $this->assertEquals('1 item left', $this->todos->getTodoCount()->text());
     }
 
     public function testDestroyLastItemHidesMainAndFooter()
     {
         $this->todos->addTodo("make sure main and footer are hidden");
-        $this->todos->getItemDestroy(0, array_shift($this->todos->getItems()))->click();
+        $items = $this->todos->getItems();
+        $this->todos->getItemDestroy(0, array_shift($items))->click();
         $this->assertRegExp('/display: none;[\s]*/', $this->todos->getMain()->attribute('style'));
         $this->assertRegExp('/display: none;[\s]*/', $this->todos->getFooter()->attribute('style'));
     }
@@ -113,7 +117,8 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testOneTodoCheckedShowsCorrectClearButtonText()
     {
         $this->todos->addTodos(array('one', 'two'));
-        $this->todos->getItemCheckbox(array_shift($this->todos->getItems()))->click();
+        $items = $this->todos->getItems();
+        $this->todos->getItemCheckbox(array_shift($items))->click();
         $this->assertEquals('Clear 1 completed item', $this->todos->getClearButton()->text());
     }
 
@@ -136,7 +141,8 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testEditTodo()
     {
         $this->todos->addTodo("make sure todo is editable");
-        $todo = array_shift($this->todos->getItems());
+        $items = $this->todos->getItems();
+        $todo = array_shift($items);
         $this->todos->switchToEdit(0, $todo);
         $this->keys("appears its fine\n");
         $this->assertEquals('appears its fine', $todo->text());
