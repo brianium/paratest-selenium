@@ -27,7 +27,8 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testClickingTodoCheckboxMarksTodoDone()
     {
         $this->todos->addTodo("make sure you can complete todos");
-        $item = array_shift($this->todos->getItems());
+        $items = $this->todos->getItems()
+        $item = array_shift($items);
         $this->todos->getItemCheckbox($item)->click();
         $this->assertEquals('done', $item->attribute('class'));
     }
