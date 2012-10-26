@@ -1,6 +1,8 @@
 {
     "name": "brianium/paratest-selenium",
     "require": {
-        "brianium/paratest": "dev-master"
+        "brianium/paratest": "dev-master",
+        "phpunit/phpunit": ">=3.7.1",
+        "phpunit/phpunit-selenium": "1.2.10"
     }
 }

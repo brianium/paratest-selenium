@@ -2,3 +2,5 @@ paratest-selenium.sublime-project
 paratest-selenium.sublime-workspace
 vendor
 composer.lock
+:
+chromedriver.log
