@@ -6,9 +6,11 @@ The tests use the Chrome browser to test the Backbone.js Todo app. Running on Ub
 with Chrome Version 22.0.1229.79 - the results were as follows:
 
 Vanilla PHPUnit:
+
 ![PHPUnit Selenium Results](https://raw.github.com/brianium/paratest-selenium/master/phpunit-results.jpg "PHPUnit Selenium Results")
 
 ParaTest Results:
+
 ![ParaTest Selenium Results](https://raw.github.com/brianium/paratest-selenium/master/paratest-results.jpg "ParaTest Selenium Results")
 
 2.25 times faster than PHPUnit alone on this test and this machine.
