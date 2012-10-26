@@ -92,7 +92,8 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testDestroyWillRemoveItem()
     {
         $this->todos->addTodo("make sure it can be destroyed");
-        $todo = array_shift($this->todos->getItems());
+        $items = $this->todos->getItems();
+        $todo = array_shift($items);
         $this->todos->getItemDestroy(0, $todo)->click();
         $this->assertEquals(0, sizeof($this->todos->getItems()));
     }
