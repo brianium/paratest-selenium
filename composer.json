@@ -3,6 +3,7 @@
     "require": {
         "brianium/paratest": "dev-master",
         "phpunit/phpunit": ">=3.7.1",
-        "phpunit/phpunit-selenium": "1.2.10"
+        "phpunit/phpunit-selenium": "1.2.10",
+        "jlipps/paraunit": "dev-master"
     }
 }

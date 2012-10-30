@@ -123,14 +123,20 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertEquals('Clear 1 completed item', $this->todos->getClearButton()->text());
     }
 
-    public function testTwoTodosCheckedShowsCorrectClearButtonText()
+    /**
+     * @test
+     */
+    public function twoTodosCheckedShowsCorrectClearButtonText()
     {
         $this->todos->addTodos(array('one', 'two'));
         $this->todos->getToggleAll()->click();
         $this->assertEquals('Clear 2 completed items', $this->todos->getClearButton()->text());
     }
 
-    public function testClearButtonHidesMainAndFooter()
+    /**
+     * @test
+     */
+    public function clearButtonHidesMainAndFooter()
     {
         $this->todos->addTodos(array('one', 'two'));
         $this->todos->getToggleAll()->click();
@@ -139,7 +145,10 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertRegExp('/display: none;[\s]*/', $this->todos->getFooter()->attribute('style'));
     }
 
-    public function testEditTodo()
+    /**
+     * @test
+     */
+    public function editTodo()
     {
         $this->todos->addTodo("make sure todo is editable");
         $items = $this->todos->getItems();
