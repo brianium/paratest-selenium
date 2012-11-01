@@ -115,6 +115,9 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertRegExp('/display: none;[\s]*/', $this->todos->getFooter()->attribute('style'));
     }
 
+    /**
+     * @group checks
+     */
     public function testOneTodoCheckedShowsCorrectClearButtonText()
     {
         $this->todos->addTodos(array('one', 'two'));
@@ -125,6 +128,7 @@ class TodoTest extends PHPUnit_Extensions_Selenium2TestCase
 
     /**
      * @test
+     * @group checks
      */
     public function twoTodosCheckedShowsCorrectClearButtonText()
     {
