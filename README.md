@@ -37,7 +37,7 @@ Running The Tests
 -----------------
 
 To run the tests using ParaTest run the following command:
-`vendor/bin/paratest --phpunit vendor/bin/phpunit --path test/ --functional --bootstrap test/bootstrap.php`
+`vendor/bin/paratest --path test/ --functional --bootstrap test/bootstrap.php`
 
 To run the tests using phpunit alone run the following command:
 `vendor/bin/phpunit --bootstrap test/bootstrap.php test/`
