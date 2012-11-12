@@ -37,9 +37,9 @@ Running The Tests
 -----------------
 
 To run the tests using ParaTest run the following command:
-`vendor/bin/paratest --path test/ --functional --bootstrap test/bootstrap.php`
+`vendor/bin/paratest -f test/`
 
 To run the tests using phpunit alone run the following command:
-`vendor/bin/phpunit --bootstrap test/bootstrap.php test/`
+`vendor/bin/phpunit test/`
 
 For more information on ParaTest head over to the [repo](https://github.com/brianium/paratest).
