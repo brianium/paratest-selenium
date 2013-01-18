@@ -36,10 +36,10 @@ These tests operate via the Chrome Driver. Installation is easy, and instruction
 Running The Tests
 -----------------
 
-To run the tests using ParaTest run the following command:
-`vendor/bin/paratest -f test/`
+To run the tests using ParaTest run the following command (will read suite from phpunix.xml):
+`vendor/bin/paratest -f`
 
 To run the tests using phpunit alone run the following command:
-`vendor/bin/phpunit test/`
+`vendor/bin/phpunit`
 
 For more information on ParaTest head over to the [repo](https://github.com/brianium/paratest).
