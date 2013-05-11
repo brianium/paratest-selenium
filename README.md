@@ -1,7 +1,7 @@
 Testing PHPUnit's PHPUnit_Extensions_Selenium2TestCase With ParaTest
 ====================================================================
 
-This is an example of running Selenium Web Driver tests in parallel with ParaTest.
+This is an example of running Selenium Web Driver tests in parallel with [ParaTest.](https://github.com/brianium/paratest)
 The tests use the Chrome browser to test the Backbone.js Todo app. Running on Ubuntu 12.04
 with Chrome Version 22.0.1229.79 - the results were as follows:
 
